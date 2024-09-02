@@ -10,8 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.7.7",
-    "fs": "^0.0.1-security",
-    "test": "jest"
+    "fs": "^0.0.1-security"
   }
 }
