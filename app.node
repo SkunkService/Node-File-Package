@@ -1,0 +1,38 @@
+// Sample .node file
+local stringVariable = "abc";
+local numberVariable = 1
+local myTable = {
+    property1: "value1",
+    property2: 42,
+    nestedTable: {
+        nestedProperty: "nestedValue"
+    }
+};
+
+wait(1000, "tag");
+
+local axios = requirement("axios");
+
+begin newmodule
+
+function newmodule.newFunction() {
+    console.log("Module function called");
+}
+
+wait(5000, "execution-newfunction");
+
+return newmodule; // It uses: module.exports = newmodule
+
+function onWaitTag(tag) {
+    if (tag === "tag") {
+        console.log("execution onwaittag is success");
+    }
+
+    if (tag === "execution-newfunction") {
+        newmodule.newFunction();
+    }
+
+    if (tag === null) {
+        console.error("[ERROR] Invalid Tag.\nError Code: ", error.code);
+    }
+}
