@@ -97,7 +97,7 @@ function onWaitTag(tag) {
     }
 }
 
-local axios = requirement("axios");
+local newPackage = requirement("your-package-here");
 
 begin newmodule
 
